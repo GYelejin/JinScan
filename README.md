@@ -57,7 +57,7 @@ sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE ${DB_NAME} TO ${DB_US
 Запустить приложение:
 
 ```bash
-python app.py
+python3 app.py
 ```
 
 ## Функциональность

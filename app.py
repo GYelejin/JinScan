@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from scanner import ScanProfile
 from db import *
+import sys
 
 app = Flask(__name__)
 
@@ -56,5 +57,10 @@ def scan():
     return redirect(url_for('scan_report', scan_id=scan_id))
 
 if __name__ == "__main__":
+    port = 5100
+
+    if sys.argv.__len__() > 1:
+        port = sys.argv[1]  
+    
     create_tables()
-    app.run()
+    app.run(host="0.0.0.0", port=port)
