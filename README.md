@@ -60,6 +60,16 @@ sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE ${DB_NAME} TO ${DB_US
 python3 app.py
 ```
 
+Открыть браузер
+[По выданной ссылке](http://localhost:5000)
+
+Скриншоты:
+![Demo](./img/Home.png "Home")
+![Demo](./img/Profiles.png "Profile")
+![Demo](./img/Add_Profile.png "New_Profile")
+![Demo](./img/Results.png "Scans")
+![Demo](./img/Report.jpeg "Report")
+
 ## Функциональность
 
 Приложение имеет следующую функциональность:
