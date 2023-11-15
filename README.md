@@ -21,7 +21,7 @@ git clone https://github.com/GYelejin/JinScan && cd JinScan
 Установить библиотеку Paramiko, psycopg2, Flask.
 
 ```bash
-pip install psycopg2 flask paramiko python-dotenv
+pip install jc psycopg2 flask paramiko python-dotenv
 ```
 
 или
