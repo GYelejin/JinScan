@@ -27,6 +27,7 @@ pip install jc psycopg2 flask paramiko python-dotenv
 или
 
 ```bash
+sudo apt-get install --reinstall libpq-dev
 pip install -r requirements.txt
 ```
 
