@@ -47,9 +47,9 @@ DB_PASSWORD=12345678
 ```bash
 source .env
 sudo systemctl start postgresql && \
-sudo -u postgres psql -c "CREATE DATABASE ${POSTGRES_DB};" && \
-sudo -u postgres psql -c "CREATE USER ${POSTGRES_USER} WITH PASSWORD '${mysecretpassword}';" && \
-sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE ${POSTGRES_DB} TO ${POSTGRES_USER};"
+sudo -u postgres psql -c "CREATE DATABASE ${DB_NAME};" && \
+sudo -u postgres psql -c "CREATE USER ${DB_USER} WITH PASSWORD '${DB_PASSWORD}';" && \
+sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE ${DB_NAME} TO ${DB_USER};"
 ```
 
 Запустить приложение:
