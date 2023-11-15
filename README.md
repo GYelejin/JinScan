@@ -9,7 +9,7 @@
 Установить Python версии 3 и выше.
 
 ```bash
-apt-get update && apt-get install -y python3 python3-pip postgresql postgresql-contrib
+sudo apt-get update && sudo apt-get install -y git python3 python3-pip postgresql postgresql-contrib
 ```
 
 Скачать исходный код приложения.
@@ -21,7 +21,7 @@ git clone https://github.com/GYelejin/JinScan && cd JinScan
 Установить библиотеку Paramiko, psycopg2, Flask.
 
 ```bash
-pip install psycopg2 flask paramiko
+pip install psycopg2 flask paramiko python-dotenv
 ```
 
 или
