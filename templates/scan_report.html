@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Results - Scan App</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            th, td {
+                text-align: left;
+                padding: 8px;
+            }
+            th {
+                background-color: #4CAF50;
+                color: white;
+            }
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+        </style>
+    </head>
+    <body>
+        {% include 'navbar.html' %}
+        <h1>Scan Result</h1>
+                <table>
+                    {% for key, value in scan_result.items() %}
+                        <tr>
+                            <th>{{ key }}</th>
+                            {% if value is mapping %}
+                                <td>
+                                <table>
+                                {% for k, v in value.items() %}
+                                    <tr>
+                                        <th>{{ k }}</th>
+                                        {% if v is mapping %}
+                                            <td>
+                                            <table>
+                                            {% for k1, v1 in v.items() %}
+                                                <tr>
+                                                    <th>{{ k1 }}</th>
+                                                    <td>{{ v1 }}</td>
+                                                </tr>
+                                            {% endfor %}
+                                            </table>
+                                            </td>
+                                        {% else %}
+                                            <td>{{ v }}</td>
+                                        {% endif %}
+                                    </tr>
+                                {% endfor %}
+                                </table>
+                                </td>
+                            {% elif value is sequence and value is not string %}
+                                <td>
+                                <table>
+                                    {% for k in value[0].keys() %}
+                                    <th>{{ k }}</th>
+                                    {% endfor %}
+                                {% for item in value %}
+                                    
+                                    <tr>
+                                    
+                                    {% for v in item.values() %}
+                                    <td>
+                                        {{ v }}
+                                    </td>
+                                    {% endfor %}
+                                </tr>
+                                {% endfor %}
+                                </table>
+                                </td>
+                            {% else %}
+                                <td>{{ value }}</td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                </table>
+            </body>
+</html>

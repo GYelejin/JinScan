@@ -1,0 +1,23 @@
+<!-- FILEPATH: /c:/Users/admin/Documents/DarkBookkeeper/templates/add_profile.html -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>New profile - Scanner App</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+    <body>
+        {% include 'navbar.html' %}
+        <h1>Now you can add new profile, just fill the form!</h1>
+        <form action="/add_profile" method="POST">
+            <label for="login">Username:</label>
+            <input type="text" id="login" name="login">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <label for="host">Host address:</label>
+            <input type="text" id="host" name="host">
+            <label for="port">Port:</label>
+            <input type="text" id="port" name="port">
+            <input type="submit" value="Add Profile">
+        </form>
+    </body>
+</html>

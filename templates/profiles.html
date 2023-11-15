@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Profiles - Scan App</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+    <body>
+        {% include 'navbar.html' %}
+        <h1>Profiles</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Host Address</th>
+                    <th>Port</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in profiles %}
+                    <tr>
+                        {% for column in row %}
+                            <td>{{ column }}</td>
+                        {% endfor %}
+                        <td>
+                            <form action="/scan" method="POST">
+                                <input type="hidden" name="profile_id" value="{{ row[0] }}">
+                                <button type="submit">Scan</button>
+                            </form>
+                            <form action="/delete_profile" method="POST">
+                                <input type="hidden" name="profile_id" value="{{ row[0] }}">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>
