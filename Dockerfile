@@ -35,4 +35,4 @@ RUN service postgresql start && \
     sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE ${POSTGRES_DB} TO ${POSTGRES_USER};"
 
 # Run the command to start the Flask app
-CMD ["flask", "run", "--host=0.0.0.0"]
+CMD ["python", "app.py"]

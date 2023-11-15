@@ -35,8 +35,8 @@ def add_profile():
 def add_profile_submit():
     login = request.form["login"]
     password = request.form["password"]
-    port = request.form["port"]
     host = request.form["host"]
+    port = request.form["port"]
     profile = ScanProfile(login, password, host, port)
     scan_profile(profile)
     return redirect(url_for('profiles'))

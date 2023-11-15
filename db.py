@@ -31,7 +31,7 @@ def execute_query(query, args=None):
         return rows
     except OperationalError as e:
         log_event("error", f"Error executing query: {query}. Error message: {e}")
-        return None
+        return []
 
 def get_profiles():
     query = "SELECT * FROM profiles"

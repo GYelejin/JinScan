@@ -9,7 +9,7 @@
 Установить Python версии 3 и выше.
 
 ```bash
-sudo apt-get update && sudo apt-get install -y git python3 python3-pip postgresql postgresql-contrib
+sudo apt-get update && sudo apt-get install -y git python3 python3-flask python3-pip postgresql postgresql-contrib
 ```
 
 Скачать исходный код приложения.
